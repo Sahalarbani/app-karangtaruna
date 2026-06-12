@@ -1,4 +1,8 @@
-import { useEffect } from "react";
+const fs = require('fs');
+
+const appFile = '/root/Projects/app-karangtaruna/src/App.jsx';
+
+const content = `import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import BottomNav from "./components/BottomNav";
 import { ToastProvider, useToast } from "./components/Toast";
@@ -81,3 +85,6 @@ export default function App() {
     </ThemeProvider>
   );
 }
+`;
+
+fs.writeFileSync(appFile, content);
